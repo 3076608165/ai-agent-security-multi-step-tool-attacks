@@ -6,6 +6,8 @@ A red-team `AttackAlgorithm` that drives a sandboxed LLM agent into firing forbi
 tool calls, against a **hidden private guardrail** (a persistent data-provenance / taint
 tracker).
 
+**Silver Medal · #42 / 4186 teams** (final private leaderboard, awarded September 2026).
+
 ---
 
 ## Result (verified from the leaderboard & submission log)
@@ -26,7 +28,7 @@ that *inspects/carries private data*. The entire private-board result comes from
 different attack predicate: instead of exfiltrating the secret, make the agent use its own
 outbound-message tool to **forward** data to a recipient on the guardrail's own email
 allowlist (`corp.invalid`). **Under a dual guardrail, you must switch attack predicates for
-the private board** — that is the contribution worth reading for.
+the private board** — that insight is what the **Silver Medal (#42 / 4186)** rests on.
 
 ---
 
@@ -142,6 +144,8 @@ the leaderboard figures above.
 
 # 中文版
 
+**银牌（Silver Medal）· 第 42 / 4186 名**（最终私榜，2026 年 9 月颁发）。
+
 ## 成绩（据榜单与提交记录核实）
 
 | 榜 | 引擎 | 分数 |
@@ -157,7 +161,7 @@ the leaderboard figures above.
 公开榜第一引擎 `http.post` 外泄（峰值 **87.975**）在私榜**恰好 0 分**——因为私榜的持久化
 溯源护栏会拦截一切"检查/携带私有数据"的外泄。私榜得分完全来自另一套攻击谓词：不外泄数据，
 而是诱导 Agent 用自身外发消息工具把数据"转发"到护栏自己的邮件白名单（`corp.invalid`）。
-**双 guardrail 下，私榜必须换一套攻击谓词** —— 这是本方案最值得读的部分。
+**双 guardrail 下，私榜必须换一套攻击谓词** —— 银牌（第 42 / 4186 名）正是建立在这个洞察上。
 
 ## 任务与攻击面
 
