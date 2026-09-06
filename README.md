@@ -146,16 +146,6 @@ how-to against real deployments.
 zero artifacts from the submission tooling, **not** final scores. Authoritative scores are
 the leaderboard figures above.
 
-## Credits / prior work
-
-- **Jun-Morita** (public repo) — the v9 *frontier* engine this build extends: live
-  validation-fill, the Harmony token-forge (CoT-skip), replay-packing with
-  `REPLAY_COST_COEF` / `REPLAY_SAFE_FRAC`, and the "Then say OK." terminal (plus the
-  "multipost is consistently negative" finding).
-- **Kaggle discussion threads** — the private-guardrail intelligence (persistent provenance
-  tracker; email-domain allowlist behaviour) that motivated the switch to the
-  confused-deputy predicate.
-
 ---
 
 # 中文版
@@ -242,11 +232,3 @@ experiments/               # 变体历史、paste 脚本、各分数快照、提
 
 `experiments/submission.csv` 及各快照目录下的 `submission.csv` 是提交工具产生的占位/零分文件，
 **不是**最终成绩；真实成绩以上方榜单为准。
-
-## 致谢 / 前人工作
-
-- **Jun-Morita**（公开仓库）——本方案所基于的 v9 *frontier* 引擎：在线验证填充、Harmony
-  token-forge（CoT 跳过）、replay-packing（`REPLAY_COST_COEF` / `REPLAY_SAFE_FRAC`）、
-  "Then say OK." 结尾，以及"multipost 稳定为负"的结论。
-- **Kaggle 讨论帖**——私有护栏情报（持久化溯源追踪、邮件域名白名单行为），促成了转向混淆代理
-  谓词的决策。
