@@ -1,0 +1,6 @@
+# Pin source + notebooks to LF so the byte-for-byte invariant holds:
+# submission_notebook.ipynb embeds attack_private.py as base64; if autocrlf
+# rewrote attack_private.py to CRLF on checkout, tests/test_notebook_consistency.py
+# would compare LF bytes against CRLF bytes and fail spuriously.
+*.py text eol=lf
+*.ipynb text eol=lf
