@@ -1,0 +1,20 @@
+[{"stream_name":"stderr","time":10.708008051,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.70808377,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.708089359,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.708094615,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":11.727486255,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.72752922,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.727535336999999,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.727540235,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":13.30268276,"data":"Wrote /kaggle/working/attack.py (26822 bytes)  [expected 26822]\n"}
+,{"stream_name":"stdout","time":13.302781582,"data":"Wrote placeholder /kaggle/working/submission.csv (overwritten by the official rerun)\n"}
+,{"stream_name":"stdout","time":13.302786485,"data":"Not a competition rerun; server startup skipped for normal notebook save/run.\n"}
+,{"stream_name":"stderr","time":17.088063631,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":17.088111829,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":17.325689334,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":17.32572838,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":18.263636409,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":18.70802938,"data":"[NbConvertApp] Writing 48145 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":22.635294725,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":23.911662345,"data":"[NbConvertApp] Writing 336442 bytes to __results__.html\n"}
+]

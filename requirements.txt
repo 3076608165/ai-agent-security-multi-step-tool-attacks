@@ -1,0 +1,3 @@
+pydantic
+gymnasium<1,>=0.29
+numpy

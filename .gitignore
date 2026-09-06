@@ -1,0 +1,11 @@
+official/
+*.zip
+__pycache__/
+.pytest_cache/
+.venv-kaggle/
+kaggle.json
+.aicomp/
+
+# Third-party references (other competitors' repos / public notebooks)
+public_repo_hamidhosen42/
+public_nb_*/

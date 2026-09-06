@@ -1,0 +1,20 @@
+[{"stream_name":"stderr","time":10.273947605,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.274042262,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.274049486,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.274053807,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":11.198310168,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.198402104,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.198407226,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.198410132,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":12.600895157,"data":"Wrote /kaggle/working/attack.py (8651 bytes)  [expected 8651]\n"}
+,{"stream_name":"stdout","time":12.600964758,"data":"Wrote placeholder /kaggle/working/submission.csv (overwritten by the official rerun)\n"}
+,{"stream_name":"stdout","time":12.600971034,"data":"Not a competition rerun; server startup skipped for normal notebook save/run.\n"}
+,{"stream_name":"stderr","time":16.184098543,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":16.184147552,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":16.428811718,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":16.428941273,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":17.459605847,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":17.901188655,"data":"[NbConvertApp] Writing 16890 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":21.406601811,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":22.554810208,"data":"[NbConvertApp] Writing 294666 bytes to __results__.html\n"}
+]
