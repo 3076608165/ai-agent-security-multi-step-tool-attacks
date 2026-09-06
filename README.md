@@ -20,6 +20,11 @@ tracker).
 
 Finals (private-only) were submitted as **DEPUTY + DEPUTY**.
 
+> Two different boards, two different team counts: the **public** leaderboard has **4187**
+> teams (ranked by public score → this repo's **#989**); the **final / private** leaderboard
+> — which decides medals — has **4186** teams (ranked by private score → the **#42** silver
+> medal above).
+
 ## Key insight (the whole point)
 
 The public-board winner — the `http.post` exfil engine, which peaks at **87.975** — scores
@@ -91,8 +96,9 @@ recipients are minted as `{label}@corp.invalid` (the sandbox's dominant mailbox 
 - Private guardrail = **persistent data-provenance / taint tracker**
   (`persistent_provenance_private`): exfil that inspects/carries private data → **0**.
 - **Score side-channel** locates the block: marker exfil **0.0 private vs 2.7 public**.
-- Email-domain allowlist is an *unverified hypothesis* (not in top-team notes either);
-  `corp.invalid` is the defensive-best recipient domain.
+- Email-domain allowlist: the **26.52 private score post-hoc confirms** the deputy path
+  (with `corp.invalid` recipients) actually scores on the private board — i.e. `corp.invalid`
+  passes the private guardrail.
 
 ## 6. Engineering & workflow
 
@@ -140,6 +146,16 @@ how-to against real deployments.
 zero artifacts from the submission tooling, **not** final scores. Authoritative scores are
 the leaderboard figures above.
 
+## Credits / prior work
+
+- **Jun-Morita** (public repo) — the v9 *frontier* engine this build extends: live
+  validation-fill, the Harmony token-forge (CoT-skip), replay-packing with
+  `REPLAY_COST_COEF` / `REPLAY_SAFE_FRAC`, and the "Then say OK." terminal (plus the
+  "multipost is consistently negative" finding).
+- **Kaggle discussion threads** — the private-guardrail intelligence (persistent provenance
+  tracker; email-domain allowlist behaviour) that motivated the switch to the
+  confused-deputy predicate.
+
 ---
 
 # 中文版
@@ -155,6 +171,9 @@ the leaderboard figures above.
 | 私榜 | `email.send` 混淆代理 | **26.52** |
 
 决赛（纯私榜）提交为 **DEPUTY + DEPUTY**。
+
+> 两个榜、两个队数：**公开榜** 4187 队（按公开分排 → 本仓库 **989** 名）；**最终/私榜** 4186 队
+> （按私榜分排、决定奖牌 → 上面的 **42** 名银牌）。
 
 ## 核心洞察（最重要的一点）
 
@@ -191,7 +210,7 @@ the leaderboard figures above.
 ## 隐藏护栏（逆向结论）
 
 私有护栏 = 持久化数据溯源/污点追踪（`persistent_provenance_private`）；得分侧信道（标记外泄
-私有 0.0 vs 公开 2.7）定位拦截点；邮件域名白名单为未证实假设，`corp.invalid` 按防御最优处理。
+私有 0.0 vs 公开 2.7）定位拦截点；邮件域名白名单——**26.52 的私榜分事后证实**了混淆代理路径（收件人 `corp.invalid`）确实能在私榜得分，即 `corp.invalid` 通过了私有护栏。
 
 ## 工程与流程
 
@@ -223,3 +242,11 @@ experiments/               # 变体历史、paste 脚本、各分数快照、提
 
 `experiments/submission.csv` 及各快照目录下的 `submission.csv` 是提交工具产生的占位/零分文件，
 **不是**最终成绩；真实成绩以上方榜单为准。
+
+## 致谢 / 前人工作
+
+- **Jun-Morita**（公开仓库）——本方案所基于的 v9 *frontier* 引擎：在线验证填充、Harmony
+  token-forge（CoT 跳过）、replay-packing（`REPLAY_COST_COEF` / `REPLAY_SAFE_FRAC`）、
+  "Then say OK." 结尾，以及"multipost 稳定为负"的结论。
+- **Kaggle 讨论帖**——私有护栏情报（持久化溯源追踪、邮件域名白名单行为），促成了转向混淆代理
+  谓词的决策。
