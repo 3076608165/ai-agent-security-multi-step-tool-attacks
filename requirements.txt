@@ -1,3 +1,11 @@
-pydantic
-gymnasium<1,>=0.29
-numpy
+# Offline validation deps (import SDK + run the engines with env=None).
+# Pinned to the exact versions in .venv-kaggle that were used for local checks.
+pydantic==2.13.4
+gymnasium==0.29.1
+numpy==2.5.2
+
+# Hosted inference (Kaggle) additionally needs the aicomp_sdk's own runtime deps,
+# which the Kaggle image provides pre-installed (not needed for local validation):
+#   transformers>=4.30.0
+#   torch>=2.0.0
+#   openai>=1.0.0

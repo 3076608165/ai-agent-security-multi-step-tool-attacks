@@ -113,9 +113,11 @@ recipients are minted as `{label}@corp.invalid` (the sandbox's dominant mailbox 
 ```
 attack.py                  # ★ http.post exfil engine (public 87.975, private 0)
 attack_private.py          # ★ email.send CONFUSED_DEPUTY engine (THE private scorer, 26.52)
-submission_notebook.ipynb  # submission artifact (writes attack.py to /kaggle/working)
-requirements.txt
-experiments/               # variant history, paste scripts, per-score snapshots, submission log
+submission_notebook.ipynb  # embeds attack_private.py (medal engine) → /kaggle/working/attack.py
+requirements.txt           # pinned offline-validation deps
+tests/                     # offline engine + notebook-consistency checks
+experiments/               # variant history, paste scripts, snapshots, RESULTS.md
+FINAL_RESULTS.md           # final version, score, rank, code hashes, Kaggle links
 ```
 
 ## Reproducibility
@@ -132,6 +134,21 @@ python -m aicomp_sdk.cli.main test redteam attack.py --budget-s 60 --agent deter
 
 > The `deterministic` agent is a smoke test only; it does not reproduce the hosted GPT-OSS
 > or Gemma behaviour.
+
+## Tests & verification
+
+```powershell
+# no pytest needed — plain-python runners
+python tests/test_engines.py                 # both engines import + run offline
+python tests/test_notebook_consistency.py    # notebook embeds attack_private.py byte-for-byte
+# or, if pytest is installed:
+python -m pytest tests/ -v
+```
+
+`test_notebook_consistency.py` is the guard for the #1 reproducibility invariant: it decodes
+the notebook's embedded `ATTACK_B64` and asserts it is byte-identical to `attack_private.py`
+(the medal engine). See `FINAL_RESULTS.md` for the authoritative scores, ranks, code hashes,
+and submission links, and `experiments/RESULTS.md` for the unified milestone table.
 
 ## Responsible disclosure
 
@@ -213,15 +230,29 @@ the leaderboard figures above.
 ```
 attack.py                  # ★ http.post 外泄引擎（公开 87.975，私榜 0）
 attack_private.py          # ★ email.send 混淆代理引擎（唯一私榜得分点，26.52）
-submission_notebook.ipynb  # 提交工件
-requirements.txt
-experiments/               # 变体历史、paste 脚本、各分数快照、提交记录
+submission_notebook.ipynb  # 内嵌 attack_private.py（奖牌引擎）→ /kaggle/working/attack.py
+requirements.txt           # 固定版本的离线校验依赖
+tests/                     # 离线引擎 + Notebook 一致性校验
+experiments/               # 变体历史、paste 脚本、各分数快照、RESULTS.md
+FINAL_RESULTS.md           # 最终版本、分数、排名、代码哈希、Kaggle 链接
 ```
 
 ## 可复现说明
 
 官方 SDK（`official/aicomp_sdk`）已 git-ignore，随竞赛数据包分发。本地校验：下载竞赛数据并解
 出 `official/` 后（Python 3.11+）运行上面的 validate/test 命令（`PYTHONPATH` 指向 `official`）。
+
+```powershell
+# 无需 pytest — 纯 Python 运行器
+python tests/test_engines.py                 # 两个引擎均可导入并离线运行
+python tests/test_notebook_consistency.py    # Notebook 与 attack_private.py 逐字节一致
+# 若已安装 pytest：
+python -m pytest tests/ -v
+```
+
+`test_notebook_consistency.py` 是 #1 可复现性不变量的守护：解码 Notebook 内嵌的 `ATTACK_B64`，
+断言其与 `attack_private.py`（奖牌引擎）逐字节一致。权威成绩/排名/哈希/提交链接见
+`FINAL_RESULTS.md`，统一里程碑表见 `experiments/RESULTS.md`。
 
 ## 责任声明
 
